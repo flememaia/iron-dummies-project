@@ -1,5 +1,7 @@
 import React from "react"
 import { BrowserRouter, Route } from 'react-router-dom'
+import Navbar from "./components/Navbar";
+import SkillsList from "./components/SkillsList";
 
 import Home from "./components/Home";
 import NewUser from "./components/NewUser"
@@ -12,6 +14,8 @@ function App() {
         <div className="col col-md-auto">
           <BrowserRouter>
             {/* LINKAR A ROTA NEW DUMMY NA NAVBAR */}
+            <Navbar />
+            <Route exact path="/" component={SkillsList} />
             <Route exact path="/" component={Home}/>
             <Route path="/newdummy" component={NewUser}/>
             <Route path="/updateskills/:id" component={EditSkills}/>
