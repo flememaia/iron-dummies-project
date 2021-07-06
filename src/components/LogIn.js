@@ -3,12 +3,14 @@ import axios from 'axios';
 
 import InputForm from '../InputForm';
 
-class NewUser extends React.Component {
+class LogIn extends React.Component {
     state = {
         username:"",
         email: "",
         password: "",
-        // _id: ""
+        pontuaction: "",
+        id: "",
+        allUsers: []
     }
 
     // Atualizar o state com o valor interno do input quando o usuário dispara o evento 'change'
@@ -17,17 +19,39 @@ class NewUser extends React.Component {
     }
 
     // Envia os dados para a API quando acontece o evento 'submit', que é disparado quando o usuário aciona um botão com 'type' submit dentro de um formulário
-    handleSubmit = (event) => {
+    handleSubmit = (event, prevState) => {
         event.preventDefault(); // Previne o comportamento padrão dos formulários, que é recarregar a página e enviar os dados através da URL
 
         axios
-        .post("https://sao-ironrest.herokuapp.com/grupo7_irondummies", this.state)
+        .get(`https://sao-ironrest.herokuapp.com/grupo7_irondummies`)
         .then((response) => {
-            console.log(response);
-            console.log(response.data.insertedId)
-            
-            // DEPOIS DE ENVIAR OS DADOS PRA API, RE-DIRECIONA PARA APPLOGGEDIN => <Route exact path="/home/:username" component={AppLogedIn}/>
-            this.props.history.push(`/home/${response.data.insertedId}`); 
+            console.log(response.data);
+
+            this.setState({allUsers: [...response.data]})
+            console.log(this.state.allUsers)
+
+            // this.state.allUsers.map(user => {
+            //     if(this.state.username === user.username){
+            //         this.setState({ id: response._id})
+            //          console.log(this.state.id)
+            //          this.props.history.push(`/home/${this.state.id}`); // DIRECIONA PARA HOME COM O id do usuário + PONTUATION + RANKING
+            //     }
+            // })
+            for (let i = 0; i < this.state.allUsers.length; i++){
+                if(prevState.username === this.state.allUsers[i].username){
+                    this.setState({ id: this.state.allUsers[i]._id})
+                    console.log(this.state.id)
+                    this.props.history.push(`/home/${this.state.id}`); // DIRECIONA PARA HOME COM O id do usuário + PONTUATION + RANKING
+                }
+            }  
+
+            // for (let i = 0; i < response.length; i++){
+            //     if(prevState.username === response.username){
+            //         this.setState({ id: response._id})
+            //         console.log(this.state.id)
+            //         this.props.history.push(`/home/${this.state.id}`); // DIRECIONA PARA HOME COM O id do usuário + PONTUATION + RANKING
+            //     }
+            // }     
         })
         .catch((err) => {
             console.log(err);
@@ -37,8 +61,8 @@ class NewUser extends React.Component {
     render(){
         return(
             <div>
-                <h1>New Dummy</h1>
-                <p>ARRUMR O TEXTO Welcome! xxxxx. First of all, let´s create your account!</p>
+                <h1>Log In</h1>
+                <p>ARRUMR O TEXTO</p>
                 <form onSubmit={this.handleSubmit}>
                     <InputForm 
                         label="Your UserName"
@@ -46,14 +70,6 @@ class NewUser extends React.Component {
                         onChange={this.handleChange}
                         value={this.state.username}
                         name="username"
-                        required
-                    />
-                    <InputForm 
-                        label="Enter your best email"
-                        type="email"
-                        onChange={this.handleChange}
-                        value={this.state.email}
-                        name="email"
                         required
                     />
                     <InputForm 
@@ -65,7 +81,7 @@ class NewUser extends React.Component {
                         required
                     />
                     <button type="submit" className="btn btn-primary">
-                        Create New Account
+                        Log In
                     </button>
                 </form>
             </div>
@@ -73,4 +89,4 @@ class NewUser extends React.Component {
     }
 }
 
-export default NewUser
+export default LogIn

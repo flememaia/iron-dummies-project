@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <Link className="navbar-brand" to="#">
+      <NavLink className="navbar-brand" to="/h">
         IronDummies
-      </Link>
+      </NavLink>
 
       <button
         className="navbar-toggler"
