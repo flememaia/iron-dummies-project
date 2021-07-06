@@ -5,6 +5,7 @@ import InputForm from '../InputForm';
 
 class EditSkills extends React.Component {
     state = {
+        _id: "",
         functions: 0,
         basic_algorithms: 0,
         data_types: 0,
@@ -13,16 +14,17 @@ class EditSkills extends React.Component {
         functional_programming: 0,
         database_managment: 0,
         plan_and_model_database: 0
+        // TERMINAR DE PREENCHER PROPRIEDADES
     }
 
     // Em formulários de edição, sempre precisamos primeiramente carregar os dados que já existem para dar ao usuário a possibiliadde de alterá-los. Por isso fazemos uma requisição GET e populamos o state.
     componentDidMount = async () => {
         try {
-        const id = this.props.match.params.id; // Parâmetro de rota injetado pelo componente Route
+        this.setState({_id: this.props.match.params.id}) // Atualizar o state com o Parâmetro de rota injetado pelo componente Route
 
-        const response = await axios.get(`https://sao-ironrest.herokuapp.com/grupo7_irondummies/${id}`);
+        const response = await axios.get(`https://sao-ironrest.herokuapp.com/grupo7_irondummies/${this.state_id}`);
 
-        this.setState({ ...response.data });
+        this.setState([...response.data ]);
             } catch (err) {
         console.log(err);
         }
@@ -35,12 +37,12 @@ class EditSkills extends React.Component {
 
         // Envia os dados para a API quando acontece o evento 'submit', que é disparado quando o usuário aciona um botão com 'type' submit dentro de um formulário
         handleSubmit = (event) => {
-            const id = this.props.match.params.id;
+            // const id = this.props.match.params.id;
 
             event.preventDefault(); // Previne o comportamento padrão dos formulários, que é recarregar a página e enviar os dados através da URL
 
             axios
-            .post(`https://sao-ironrest.herokuapp.com/grupo7_irondummies/${id}`, this.state)
+            .post(`https://sao-ironrest.herokuapp.com/grupo7_irondummies`, this.state)
             .then((response) => {
                 console.log(response);
                 this.props.history.push("/"); // // DIRECIONA PARA MESMA HOME COM O NOME DO USUÁRIO + PONTUATION + RANKING

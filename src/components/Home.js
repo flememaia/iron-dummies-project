@@ -1,25 +1,36 @@
 import React from "react"
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Home extends React.Component{
 
-    state = {
-        id: ""
-    }
+    // state = {
+    //     id: ""
+    // }
+
+    // handleSubmit = (event) =>{
+    //     event.preventDefault();
+    // }
 
 render(){
     return (
         <div>
-            <h1>Hello World!</h1>
-            <h2>PUXAR O NOME DO USUÁRIO</h2>
-            <h2>PUXAR A PONTUAÇÃO</h2>
-            <h3>New here? Please create an account for a better experience!</h3>
-            {/* <Link 
-                className="" 
-                to={`/updateskills/${id}`}
-                key={id}
-                >Update your Skills
-            </Link> */}
+            <h1>TEXTO INICIAL ARRUMAR</h1>
+            
+            <Link 
+                to={`/login`}
+                ><button type="submit" className="btn btn-primary">
+                    Log In
+                </button>
+            </Link>
+            <Link 
+                to={`/newdummy`}
+                ><button type="submit" className="btn btn-primary">
+                    Become a Dummy!
+                </button>
+            </Link>
+            {/* <form onSubmit={this.handleSubmit}> */}
+                
+            {/* </form> */}
         </div>
     )
 }

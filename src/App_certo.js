@@ -5,25 +5,26 @@ import SkillsList from "./components/SkillsList";
 import NewContribution from "./components/NewContribution";
 
 import Home from "./components/Home";
-import NewUser from "./components/NewUser";
+import NewUser from "./components/NewUser"
+import LogIn from "./components/LogIn";
+import AppLogedIn from "./components/AppLoggedIn";
 import EditSkills from "./components/EditSkills";
 
 function App() {
-  return (
-    <div className="App">
-      <div className="container">
-        <div className="row justify-content-md-center">
-          <div className="col col-md-auto">
-            <BrowserRouter>
-              {/* LINKAR A ROTA NEW DUMMY NA NAVBAR */}
-              <Navbar />
-              <Route exact path="/" component={SkillsList} />
-              <Route exact path="/h" component={Home} />
-              <Route path="/newcontribution" component={NewContribution} />
-              <Route path="/newdummy" component={NewUser} />
-              <Route path="/updateskills/:id" component={EditSkills} />
-            </BrowserRouter>
-          </div>
+  return (<div className="App">
+    <div className="container">
+      <div className="row justify-content-md-center">
+        <div className="col col-md-auto">
+          <BrowserRouter>
+            <Navbar />
+            <Route exact path="/" component={SkillsList} />
+            <Route path="/h" component={Home}/>
+            <Route  path="/login" component={LogIn}/>
+            <Route path="/newdummy" component={NewUser}/>
+            {/* :id => _id */}
+            <Route exact path="/home/:id" component={AppLogedIn}/>
+            <Route path="/updateskills/:id" component={EditSkills}/>
+          </BrowserRouter>
         </div>
       </div>
     </div>
