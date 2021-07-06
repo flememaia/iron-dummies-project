@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+// Forum com as colunas preenchidas pelos usuários
+
 class SkillsList extends Component {
   state = {
     characters: [],
@@ -10,7 +12,7 @@ class SkillsList extends Component {
   componentDidMount = async () => {
     try {
       const response = await axios.get(
-        "https://ih-crud-api.herokuapp.com/characters"
+        "https://sao-ironrest.herokuapp.com/grupo7_irondummies"
       );
       console.log(response);
       this.setState({ characters: [...response.data] });
@@ -28,6 +30,7 @@ class SkillsList extends Component {
               <th scope="col">ID</th>
               <th scope="col">Dummy</th>
               <th scope="col">Skill Type</th>
+              <th scope="col">Contribution Type</th>
               <th scope="col">Contribution</th>
               <th scope="col">Source</th>
             </tr>
@@ -37,25 +40,11 @@ class SkillsList extends Component {
               return (
                 <tr key={character.id}>
                   <th scope="row">{character.id}</th>
-                  <td>{character.name}</td>
-                  <td>{character.occupation}</td>
-
-                  <td>{character.debt ? "Yes" : "No"}</td>
-                  <td>
-                    <Link to={`/characters/${character.id}`}>
-                      <i className="far fa-eye m-2"></i>
-                      {/* <i className="fas fa-edit"></i> */}
-                    </Link>
-                    <Link to={`/character/${character.id}/edit/`}>
-                      <i className="fas fa-edit m-2"></i>
-                    </Link>
-                    <Link to={`/character/${character.id}/delete/`}>
-                      <i
-                        style={{ color: "red" }}
-                        class="fas fa-trash-alt m-2"
-                      ></i>
-                    </Link>
-                  </td>
+                  <td>{character.dummy}</td>
+                  <td>{character.skillType}</td>
+                  <td>{character.contributionType}</td>
+                  <td>{character.contribution}</td>
+                  <td>{character.source}</td>
                 </tr>
               );
             })}
