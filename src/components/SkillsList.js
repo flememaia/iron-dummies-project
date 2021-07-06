@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+// Forum com as colunas preenchidas pelos usuários
+
 class SkillsList extends Component {
   state = {
     characters: [],

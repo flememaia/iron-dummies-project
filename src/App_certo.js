@@ -1,7 +1,8 @@
-import React from "react"
-import { BrowserRouter, Route } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import SkillsList from "./components/SkillsList";
+import NewContribution from "./components/NewContribution";
 
 import Home from "./components/Home";
 import NewUser from "./components/NewUser"
@@ -27,8 +28,6 @@ function App() {
         </div>
       </div>
     </div>
-    
-  </div>
   );
 }
 
