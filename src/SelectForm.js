@@ -12,6 +12,7 @@ function SelectForm(props){
           value={props.value}
           name={props.name}
         >
+          {/* prop array opções  */}
           <option value="0">0 = Baby Dummy - What the hell is it? </option>
           <option value="1">1 = Novice (or Dummy): I have a basic understanding of this competence</option>
           <option value="2">2 = Advanced beginner: I can demonstrate this competence under supervision and help other dummies! </option>
