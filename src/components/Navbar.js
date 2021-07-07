@@ -24,7 +24,7 @@ function Navbar() {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
             <Link className="nav-link" to="#">
-              Progression <span class="sr-only">(current)</span>
+              Track Your Progress <span class="sr-only">(current)</span>
             </Link>
           </li>
 
