@@ -5,7 +5,7 @@ import axios from "axios";
 
 class ContributionDetails extends Component {
   state = {
-    character: "",
+    element: "",
   };
 
   componentDidMount = async () => {
@@ -14,7 +14,7 @@ class ContributionDetails extends Component {
         `https://sao-ironrest.herokuapp.com/grupo7_irondummies/${this.props.match.params.id}`
       );
       console.log(response);
-      this.setState({ character: { ...response.data } });
+      this.setState({ element: { ...response.data } });
     } catch (err) {
       console.error(err);
     }
@@ -23,19 +23,19 @@ class ContributionDetails extends Component {
   render() {
     return (
       <div className="container d-flex flex-column">
-        <h1>{this.state.character.name} Details</h1>
+        <h1>{this.state.element.name} Details</h1>
 
         <span>
           <strong>Username </strong>
-          {this.state.character.dummy}
+          {this.state.element.username}
         </span>
         <span>
           <strong>Contribution</strong>
-          {this.state.character.contribution}
+          {this.state.element.contribution}
         </span>
         <span>
           <strong>Source</strong>
-          {this.state.character.source}
+          {this.state.element.source}
         </span>
       </div>
     );

@@ -6,7 +6,7 @@ import axios from "axios";
 
 class SkillsList extends Component {
   state = {
-    allUsers: []
+    allUsers: [],
     // username: "",
     // contribution: "",
     // source: ""
@@ -18,7 +18,7 @@ class SkillsList extends Component {
         "https://sao-ironrest.herokuapp.com/grupo7_irondummies"
       );
       console.log(response);
-      this.setState({allUsers: [...response.data]});
+      this.setState({ allUsers: [...response.data] });
     } catch (err) {
       console.error(err);
     }
@@ -38,19 +38,19 @@ class SkillsList extends Component {
           </thead>
           <tbody>
             {this.state.allUsers.map((user, index) => {
-              return(
+              return (
                 <tr key={index}>
                   <td>{user.username}</td>
                   <td>{user.contribution}</td>
                   <td>{user.source}</td>
                   <td>
-                    <Link to={`/`}>
+                    <Link to={`/contributiondetails/${index}`}>
                       <i className="far fa-eye m-2"></i>
                     </Link>
-                    <Link to={`//`}>
+                    <Link to={`/editcontribution/${index}/edit`}>
                       <i className="fas fa-edit m-2"></i>
                     </Link>
-                    <Link to={`/`}>
+                    <Link to={`/deletecontribution/${index}/delete`}>
                       <i
                         style={{ color: "red" }}
                         className="fas fa-trash-alt m-2"
@@ -58,9 +58,8 @@ class SkillsList extends Component {
                     </Link>
                   </td>
                 </tr>
-              )
+              );
             })}
-                
           </tbody>
         </table>
       </div>
