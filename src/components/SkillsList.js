@@ -6,7 +6,10 @@ import axios from "axios";
 
 class SkillsList extends Component {
   state = {
-    characters: [],
+    allUsers: []
+    // username: "",
+    // contribution: "",
+    // source: ""
   };
 
   componentDidMount = async () => {
@@ -15,7 +18,7 @@ class SkillsList extends Component {
         "https://sao-ironrest.herokuapp.com/grupo7_irondummies"
       );
       console.log(response);
-      this.setState({ characters: [...response.data] });
+      this.setState({allUsers: [...response.data]});
     } catch (err) {
       console.error(err);
     }
@@ -23,52 +26,41 @@ class SkillsList extends Component {
 
   render() {
     return (
-      <div className="container my-5">
+      <div className="container container-md my-5">
         <table className="table table-striped table-hover">
           <thead className="thead-dark">
             <tr>
-              {/* <th scope="col">ID</th> */}
-              <th scope="col">Dummy</th>
-              {/* <th scope="col">Skill Type</th> */}
-              <th scope="col">Contribution</th>
-              <th scope="col">Source</th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-              <th scope="col"></th>
+              <th scope="col col-md-2">Dummy</th>
+              <th scope="col col-md-2">Contribution</th>
+              <th scope="col col-md-2">Source</th>
+              <th scope="col col-md-2"></th>
             </tr>
           </thead>
           <tbody>
-            {this.state.characters.map((character) => {
-              return (
-                <tr key={character.id}>
-                  {/* <th scope="row">{character.id}</th> */}
-                  <td>{character.username}</td>
-                  <td>{character.email}</td>
-
-                  <td>{character.password}</td>
+            {this.state.allUsers.map((user, index) => {
+              return(
+                <tr key={index}>
+                  <td>{user.username}</td>
+                  <td>{user.contribution}</td>
+                  <td>{user.source}</td>
                   <td>
-                    <Link to={`/characters/${character.id}`}>
+                    <Link to={`/`}>
                       <i className="far fa-eye m-2"></i>
-                      detalhes
-                      {/* <i className="fas fa-edit"></i> */}
                     </Link>
-                    <Link to={`/character/${character.id}/edit/`}>
+                    <Link to={`//`}>
                       <i className="fas fa-edit m-2"></i>
-                      editar
                     </Link>
-                    <Link to={`/character/${character.id}/delete/`}>
+                    <Link to={`/`}>
                       <i
                         style={{ color: "red" }}
                         className="fas fa-trash-alt m-2"
                       ></i>
-                      <button type="submit" className="btn btn-primary">
-                        deletar
-                      </button>
                     </Link>
                   </td>
                 </tr>
-              );
+              )
             })}
+                
           </tbody>
         </table>
       </div>
