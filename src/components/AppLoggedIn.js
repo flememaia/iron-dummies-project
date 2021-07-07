@@ -24,6 +24,13 @@ class AppLogedIn extends React.Component{
                         Update Your Skills!
                     </buton>
                 </Link>
+
+                <Link to={`/chart/${this.state._id}`}>
+                    <buton className="btn btn-danger">
+                        Generate Skill Report!
+                    </buton>
+                </Link>
+
                 {/* Fórum com contribuições etc */}
                 < SkillsList/>
             </div>

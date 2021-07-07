@@ -5,16 +5,19 @@ import SelectForm from '../SelectForm';
 
 class EditSkills_select extends React.Component {
     state = {
-        web_skills: "",
-        functions: 0,
-        basic_algorithms: 0,
-        data_types: 0,
-        oop_basics: 0,
-        dom: 0,
-        functional_programming: 0,
-        database_managment: 0,
-        plan_and_model_database: 0
-        // TERMINAR DE PREENCHER PROPRIEDADES
+        skills: {
+            // web_skills: "",
+            functions: 0,
+            basic_algorithms: 0,
+            data_types: 0,
+            oop_basics: 0,
+            dom: 0,
+            functional_programming: 0,
+            database_managment: 0,
+            plan_and_model_database: 0
+            // TERMINAR DE PREENCHER PROPRIEDADES
+        }
+        
     }
 
     // Em formulários de edição, sempre precisamos primeiramente carregar os dados que já existem para dar ao usuário a possibiliadde de alterá-los. Por isso fazemos uma requisição GET e populamos o state.

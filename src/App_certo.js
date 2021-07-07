@@ -10,6 +10,7 @@ import LogIn from "./components/LogIn";
 import AppLogedIn from "./components/AppLoggedIn";
 // import EditSkills from "./components/EditSkills";
 import EditSkills_select from "./components/EditSkills_select";
+import ChartBox from "./components/ChartBox";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
             {/* :id => _id */}
             <Route exact path="/home/:id" component={AppLogedIn}/>
             <Route path="/updateskills/:id" component={EditSkills_select}/>
+            {/* <Route path="/chart/:id" component={ChartBox}/> */}
+            <Route path="/chart" component={ChartBox}/>
           </BrowserRouter>
         </div>
       </div>
