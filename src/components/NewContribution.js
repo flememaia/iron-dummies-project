@@ -2,11 +2,13 @@ import React from "react";
 import axios from "axios";
 
 import InputForm from "../InputForm";
+import SelectFormForum from "../SelecFormForum";
 
 class NewContribution extends React.Component {
   state = {
     username: "",
     contribution: "",
+    skilltype: "",
     source: "",
   };
 
@@ -50,6 +52,14 @@ class NewContribution extends React.Component {
             onChange={this.handleChange}
             value={this.state.contribution}
             name="contribution"
+            required
+          />
+          <SelectFormForum
+            label="Skill Type"
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.source}
+            name="source"
             required
           />
           <InputForm

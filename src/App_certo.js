@@ -23,7 +23,10 @@ function App() {
           <div className="col col-md-auto">
             <BrowserRouter>
               <Navbar />
-              <Route exact path="/" component={SkillsList} />
+              <Route exact path="/forumbasics" component={SkillsList} />
+              <Route exact path="/forumfrontend" component={SkillsList} />
+              <Route exact path="/forumbackend" component={SkillsList} />
+              <Route exact path="/forumhavenoidea" component={SkillsList} />
               <Route path="/h" component={Home} />
               <Route path="/login" component={LogIn} />
               <Route path="/newdummy" component={NewUser} />

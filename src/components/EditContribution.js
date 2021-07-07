@@ -9,6 +9,7 @@ class EditContribution extends Component {
   state = {
     username: "",
     contribution: "",
+    skilltype: "",
     source: "",
   };
 
