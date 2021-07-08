@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from 'react-router-dom'
 
+import ForumList from "./forum/ForumList"
+
 class Home extends React.Component{
 
     // state = {
@@ -33,7 +35,7 @@ render(){
                 </Link>
                 </div>
             </div>
-            
+            < ForumList/>
             {/* <form onSubmit={this.handleSubmit}> */}
                 
             {/* </form> */}

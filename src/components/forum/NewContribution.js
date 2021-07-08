@@ -6,11 +6,30 @@ import SelectFormForum from "../../SelecFormForum";
 
 class NewContribution extends React.Component {
   state = {
-    username: "",
+    id_user: this.props.match.params.id,
+    // username: "",
+    username_cont:"",
     contribution: "",
     skilltype: "",
     source: "",
   };
+
+  // Em formulários de edição, sempre precisamos primeiramente carregar os dados que já existem para dar ao usuário a possibiliadde de alterá-los. Por isso fazemos uma requisição GET e populamos o state.
+//   componentDidMount = async () => {
+//     try {
+//      // Atualizar o state com as informações prévias do user já salvas na API (id é o parâmetro de rota). 
+//      // Caso seja a primeira vez, retorna tudo zero. 
+//     const response = await axios.get(`https://sao-ironrest.herokuapp.com/grupo7_irondummies/${this.props.match.params.id}`);
+
+//     this.setState( {
+//         username: response.data.username, 
+//     } ); 
+//     //Não pode usar [...response.data] para atualizar o state porque atualizaria também o _id e 
+//     // daria erro. Portanto, colocar apenas as propriedades que estão sendo atualizadas.
+//         } catch (err) {
+//     console.log(err);
+//     }
+// };
 
   // Atualizar o state com o valor interno do input quando o usuário dispara o evento 'change'
   handleChange = (event) => {
@@ -22,32 +41,40 @@ class NewContribution extends React.Component {
     event.preventDefault(); // Previne o comportamento padrão dos formulários, que é recarregar a página e enviar os dados através da URL
 
     axios
-      .post("https://sao-ironrest.herokuapp.com/grupo7_irondummies", this.state)
+      // .put(`https://sao-ironrest.herokuapp.com/grupo7_irondummies/${this.props.match.params.id}`, this.state)
+      .post(`https://sao-ironrest.herokuapp.com/grupo7_irondummies`, this.state)
       .then((response) => {
         console.log(response);
-        this.props.history.push("/"); // DIRECIONA PARA HOME COM O NOME DO USUÁRIO + PONTUATION + RANKING
+        this.props.history.push(`/home/${this.props.match.params.id}`); // DIRECIONA PARA HOME COM O NOME DO USUÁRIO + PONTUATION + RANKING
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+  changeIdea = () => {
+    this.props.history.push(`/home/${this.props.match.params.id}`);
+  }
+
   render() {
     return (
       <div className="container my-5">
         <h1>Your Contribution</h1>
         <p>Feel free to type whatever you want. We are all dummies!</p>
+        <i>*mandatory fields</i>
+        <br/>
+        <br/>
         <form onSubmit={this.handleSubmit}>
           <InputForm
-            label="Username"
+            label="Username*"
             type="text"
             onChange={this.handleChange}
-            value={this.state.username}
-            name="username"
+            value={this.state.username_cont}
+            name="username_cont"
             required
           />
           <InputForm
-            label="Contribution"
+            label="Contribution*"
             type="text"
             onChange={this.handleChange}
             value={this.state.contribution}
@@ -56,11 +83,9 @@ class NewContribution extends React.Component {
           />
           <SelectFormForum
             label="Skill Type"
-            type="text"
             onChange={this.handleChange}
-            value={this.state.source}
-            name="source"
-            required
+            value={this.state.skilltype}
+            name="skilltype"
           />
           <InputForm
             label="Source"
@@ -68,16 +93,17 @@ class NewContribution extends React.Component {
             onChange={this.handleChange}
             value={this.state.source}
             name="source"
-            required
           />
-
-          <button type="submit" className="btn btn-primary">
-            Submit New Post
-          </button>
-          <button type="submit" className="btn btn-primary ml-3">
-            Cancel
-          </button>
+          <div className="d-flex justify-content-between mx-2">
+            <button type="submit" className="btn btn-success">
+              <i class="fas fa-check-square m-2"></i>
+            </button>
+            <button className="btn btn-danger" onClick={this.changeIdea}>
+              <i class="fas fa-trash-alt m-2"></i>
+            </button>
+          </div>
         </form>
+          
       </div>
     );
   }
