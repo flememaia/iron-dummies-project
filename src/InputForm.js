@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function InputForm(props){
     return (
       <div className="form-group mb-3">
-        <label htmlFor={props.id}>{props.label}</label>
+        <label htmlFor={props.id}><strong>{props.label}</strong></label>
         <input
           id={props.id}
           type={props.type}
