@@ -10,6 +10,7 @@ class EditContribution extends Component {
     username: "",
     contribution: "",
     source: "",
+    skilltype: ""
   };
 
   componentDidMount = async () => {

@@ -39,6 +39,7 @@ class LogIn extends React.Component {
     render(){
         return(
             <div>
+                <h1>Componente login</h1>
                 <h1 className="my-5">Log In</h1>
                 <p>ARRUMR O TEXTO</p>
                 <form onSubmit={this.handleSubmit}>
