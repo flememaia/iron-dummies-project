@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 
-import InputForm from "../InputForm";
-import SelectFormForum from "../SelecFormForum";
+import InputForm from "../../InputForm";
+import SelectFormForum from "../../SelecFormForum";
 
 class NewContribution extends React.Component {
   state = {

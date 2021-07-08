@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import SkillsList from "./components/SkillsList";
-import NewContribution from "./components/NewContribution";
-import ContributionDetails from "./components/ContributionDetails";
-import EditContribution from "./components/EditContribution";
-import DeleteContribution from "./components/DeleteContribution";
+import SkillsList from "./components/forum/SkillsList";
+import NewContribution from "./components/forum/NewContribution";
+import ContributionDetails from "./components/forum/ContributionDetails";
+import EditContribution from "./components/forum/EditContribution";
+import DeleteContribution from "./components/forum/DeleteContribution";
 import Home from "./components/Home";
 import NewUser from "./components/NewUser";
 import LogIn from "./components/LogIn";
