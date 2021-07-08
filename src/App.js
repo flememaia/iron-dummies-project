@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import index from "./index.css";
 
 import Navbar from "./components/Navbar";
 import SkillsList from "./components/forum/SkillsList";
@@ -18,10 +19,10 @@ import ChartBox from "./components/ChartBox";
 
 function App() {
   return (
-  <div className="App">
-    <div className="container">
-      <div className="row justify-content-md-center">
-        <div className="col col-md-auto">
+    <div className="App">
+      <div className="container">
+        <div className="row justify-content-md-center">
+          <div className="col col-md-auto">
             <BrowserRouter>
               <Navbar />
               <Route exact path="/forumbasics" component={SkillsList} />
@@ -43,10 +44,10 @@ function App() {
               />
               {/* :id => _id */}
               <Route exact path="/home/:id" component={AppLogedIn} />
-              <Route path="/updateskills/:id" component={EditSkillsM1}/>
-              <Route path="/updateskills_m2/:id" component={EditSkillsM2}/>
-              <Route path="/updateskills_m3/:id" component={EditSkillsM3}/>
-              <Route path="/chart/:id" component={ChartBox}/>
+              <Route path="/updateskills/:id" component={EditSkillsM1} />
+              <Route path="/updateskills_m2/:id" component={EditSkillsM2} />
+              <Route path="/updateskills_m3/:id" component={EditSkillsM3} />
+              <Route path="/chart/:id" component={ChartBox} />
             </BrowserRouter>
           </div>
         </div>
