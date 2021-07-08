@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, NavLink } from "react-router-dom";
-import SkillsList from "./forum/SkillsList"
+import ForumList from "./forum/ForumList";
 import Navbar from "./Navbar";
 
 import axios from "axios"
@@ -31,7 +31,7 @@ class AppLogedIn extends React.Component{
         return(
             <div>
                 <Navbar id={this.state_id} />
-{/* 
+
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <NavLink className="navbar-brand" to="/h">
                         IronDummies
@@ -80,12 +80,19 @@ class AppLogedIn extends React.Component{
                         </Link>
                         </ul>
                     </div>
-                    </nav> */}
+                    </nav>
                 <h1>Componente AppLoggedIn</h1>
                 <h2>Welcome, {this.state.username}!</h2>
                 {/* <h2>You have {this.state.points} points!</h2> */}
                 {/* Fórum com contribuições etc */}
-                < SkillsList/>
+
+                <Link to={`/newcontribution/${this.state._id}`}>
+                    <buton className="btn btn-primary">
+                        New Contribution!
+                    </buton>
+                </Link>
+                
+                < ForumList/>
             </div>
         )
     }

@@ -6,7 +6,7 @@ import InputForm from "../InputForm";
 class LogIn extends React.Component {
   state = {
     username: "",
-    email: "",
+    // email: "",
     password: "",
     pontuaction: "",
     id: "",
@@ -18,7 +18,7 @@ class LogIn extends React.Component {
   };
 
   // Envia os dados para a API quando acontece o evento 'submit', que é disparado quando o usuário aciona um botão com 'type' submit dentro de um formulário
-  handleSubmit = (event, prevState) => {
+  handleSubmit = (event) => {
     event.preventDefault(); // Previne o comportamento padrão dos formulários, que é recarregar a página e enviar os dados através da URL
 
     axios

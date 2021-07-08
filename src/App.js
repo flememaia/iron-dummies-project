@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import index from "./index.css";
 
 import Navbar from "./components/Navbar";
-import SkillsList from "./components/forum/SkillsList";
+import ForumList from "./components/forum/ForumList";
 import NewContribution from "./components/forum/NewContribution";
 import ContributionDetails from "./components/forum/ContributionDetails";
 import EditContribution from "./components/forum/EditContribution";
@@ -25,24 +25,20 @@ function App() {
           <div className="col col-md-auto">
             <BrowserRouter>
               <Navbar />
-              <Route exact path="/forumbasics" component={SkillsList} />
-              <Route exact path="/forumfrontend" component={SkillsList} />
-              <Route exact path="/forumbackend" component={SkillsList} />
-              <Route exact path="/forumhavenoidea" component={SkillsList} />
+              <Route exact path="/forumbasics" component={ForumList} />
+              <Route exact path="/forumfrontend" component={ForumList} />
+              <Route exact path="/forumbackend" component={ForumList} />
+              <Route exact path="/forumhavenoidea" component={ForumList} />
+              
+              <Route path="/newcontribution/:id" component={NewContribution} />
+              <Route path="/contributiondetails/:id" component={ContributionDetails}/>
+              <Route path="/editcontribution/:id" component={EditContribution} />
+              <Route path="/deletecontribution/:id" component={DeleteContribution}
+              />
+              {/* :id => _id */}
               <Route path="/h" component={Home} />
               <Route path="/login" component={LogIn} />
               <Route path="/newdummy" component={NewUser} />
-              <Route path="/newcontribution" component={NewContribution} />
-              <Route
-                path="/contributiondetails"
-                component={ContributionDetails}
-              />
-              <Route path="/editcontribution" component={EditContribution} />
-              <Route
-                path="/deletecontribution/:id"
-                component={DeleteContribution}
-              />
-              {/* :id => _id */}
               <Route exact path="/home/:id" component={AppLogedIn} />
               <Route path="/updateskills/:id" component={EditSkillsM1} />
               <Route path="/updateskills_m2/:id" component={EditSkillsM2} />
