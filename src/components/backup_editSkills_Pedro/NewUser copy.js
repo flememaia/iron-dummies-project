@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import InputForm from '../InputForm';
+import InputForm from '../../InputForm';
 
 class NewUser extends React.Component {
     state = {
@@ -9,24 +9,20 @@ class NewUser extends React.Component {
         email: "",
         password: "",
         points: 0,
-        web_skills: "",
-        functions: 0,
-        basic_algorithms: 0,
-        data_types: 0,
-        oop_basics: 0,
-        dom: 0,
-        event_handling: 0,
-        component_development: 0,
-        state_management: 0,
-        props: 0,                
-        frontend_routing: 0,         
-        api_integration: 0,       
-        lifting_stateup: 0,
-        database_managment: 0,
-        plan_and_model_database: 0,  
-        implement_restful_apis: 0,
-        security_basics: 0,
-        persistente_login: 0       
+        skills: {
+            m1: {
+            functions: 0,
+            basic_algorithms: 0,
+            data_types: 0,
+            oop_basics: 0,
+            dom: 0,
+            functional_programming: 0,
+            database_managment: 0,
+            plan_and_model_database: 0
+            },
+            m2: {},
+            m3: {}
+        }
             // TERMINAR DE PREENCHER PROPRIEDADES
     }
 

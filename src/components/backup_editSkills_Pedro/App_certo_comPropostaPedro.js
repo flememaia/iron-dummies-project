@@ -6,7 +6,7 @@ import SkillsList from "./components/SkillsList";
 import NewContribution from "./components/NewContribution";
 import ContributionDetails from "./components/ContributionDetails";
 import EditContribution from "./components/EditContribution";
-import DeleteContribution from "./components/DeleteContribution";
+// import DeleteContribution from "./components/DeleteContribution";
 import Home from "./components/Home";
 import NewUser from "./components/NewUser";
 import LogIn from "./components/LogIn";
@@ -24,10 +24,7 @@ function App() {
         <div className="col col-md-auto">
             <BrowserRouter>
               <Navbar />
-              <Route exact path="/forumbasics" component={SkillsList} />
-              <Route exact path="/forumfrontend" component={SkillsList} />
-              <Route exact path="/forumbackend" component={SkillsList} />
-              <Route exact path="/forumhavenoidea" component={SkillsList} />
+              <Route exact path="/" component={SkillsList} />
               <Route path="/h" component={Home} />
               <Route path="/login" component={LogIn} />
               <Route path="/newdummy" component={NewUser} />
@@ -37,15 +34,16 @@ function App() {
                 component={ContributionDetails}
               />
               <Route path="/editcontribution" component={EditContribution} />
-              <Route
-                path="/deletecontribution/:id"
+              {/* <Route
+                path="/deletecontribution"
                 component={DeleteContribution}
-              />
+              /> */}
               {/* :id => _id */}
               <Route exact path="/home/:id" component={AppLogedIn} />
               <Route path="/updateskills/:id" component={EditSkillsM1}/>
               <Route path="/updateskills_m2/:id" component={EditSkillsM2}/>
               <Route path="/updateskills_m3/:id" component={EditSkillsM3}/>
+              {/* <Route path="/updateskills_m2/:id/:m" component={EditSkillsM2_select_test}/> PROPOSTA PEDRO COMPONENTE ÚNICO*/}
               <Route path="/chart/:id" component={ChartBox}/>
             </BrowserRouter>
           </div>

@@ -11,6 +11,7 @@ class EditContribution extends Component {
     contribution: "",
     skilltype: "",
     source: "",
+    skilltype: ""
   };
 
   componentDidMount = async () => {

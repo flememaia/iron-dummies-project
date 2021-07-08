@@ -2,7 +2,7 @@ import React from 'react';
 import Chart from "chart.js/auto";
 import axios from 'axios';
 
-class ChartBox extends React.Component {
+class ChartBoxBar extends React.Component {
     state = { //SUGESTÃO PEDRO PUXAR OBJETO SKILL INTEIRO
         // labels: [],
         values_m1: [],
@@ -170,11 +170,11 @@ class ChartBox extends React.Component {
     render(){
         return(
             <div>
-                <h1>Componente ChartBox</h1>
+                <h1>Componente ChartBoxBar</h1>
                 <canvas id="chart" width="200"></canvas>
             </div>
         )
     }
 }
 
-export default ChartBox
+export default ChartBoxBar
