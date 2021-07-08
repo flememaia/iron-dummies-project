@@ -1,9 +1,6 @@
 import React from "react";
 import axios from "axios";
 
-import InputForm from "../../InputForm";
-import SelectFormForum from "../../SelecFormForum";
-
 class DeleteContribution extends React.Component {
   state = {
     id_user:"",
