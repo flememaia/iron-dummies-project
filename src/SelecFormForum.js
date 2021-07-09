@@ -18,6 +18,8 @@ function SelectFormForum(props) {
         <option value="WebDev Front">WebDev Front</option>
         <option value="WebDev Back">WebDev Back</option>
         <option value="Have no idea">Have no idea</option>
+        <option value="Help me">Help me!</option>
+        <option value="Sugestão">Sugestão</option>
       </select>
     </div>
   );
