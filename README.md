@@ -12,7 +12,6 @@ Platform designed to track the evolution of the Ironhack bootcamp. WebDevs netwo
 - Technology community forum.
 
 
-
 ## How does it work?
 
 - The forum preview will be available to both registered and unregistered users;
@@ -34,8 +33,8 @@ Guilherme Candeia - WebDev Sutudent
 
 ## Visit our WebApp
 
-Inserir link
-
+Inserir link [here!](https://irondummies.netlify.app/)
+ 
 
 ## 🛠 Tech used
  
@@ -54,6 +53,6 @@ But, wait for the next version!
 
 ## Find out more about this project
 
-You can find more [here!]()
+You can find more [here!](https://docs.google.com/presentation/d/18Yp6otIicOLSLUJPVwmSfusHbMIIZqdrQeNlmZkxpNU/edit#slide=id.ge3e7f3d2c3_0_143)
 
 ![Thank you!](https://media.giphy.com/media/M9NbzZjAcxq9jS9LZJ/giphy.gif)
