@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import index from "./index.css";
 
 import "./index.css"
 // import Navbar from "./components/Navbar";
@@ -22,17 +23,14 @@ import ChartBox from "./components/ChartBox";
 
 function App() {
   return (
-  <div className="App">
-    <div className="container">
-      <div className="row justify-content-md-center">
-        <div className="col col-md-auto">
+    <div className="App">
+      <div className="container">
+        <div className="row justify-content-md-center">
+          <div className="col col-md-auto">
             <BrowserRouter>
 
-              {/* <Route exact path="/forumbasics" component={ForumListBasics} /> */}
               <Route exact path="/forumbasics" component={AppLoggedInForumBasics} />
-              {/* <Route exact path="/forumfrontend" component={ForumList} /> */}
               <Route exact path="/forumfrontend" component={AppLoggedInForumWebDevFront} />
-              {/* <Route exact path="/forumbackend" component={ForumList} /> */}
               <Route exact path="/forumbackend" component={AppLoggedInForumWebDevBack} />
 
               
@@ -44,15 +42,10 @@ function App() {
               <Route path="/deletecontribution/:id" component={DeleteContribution}
               />
               {/* :id => _id */}
-              {/* OK */}
               <Route path="/h" component={Home} />
-              {/* Ok */}
               <Route path="/login" component={LogIn} />
-              {/* Ok */}
               <Route path="/newdummy" component={NewUser} />
-              {/* OK */}
               <Route exact path="/home/:id" component={AppLogedIn} />
-              {/* Ok */}
               <Route path="/updateskills/:id" component={EditSkillsM1}/>
               <Route path="/updateskills_m2/:id" component={EditSkillsM2}/>
               <Route path="/updateskills_m3/:id" component={EditSkillsM3}/>

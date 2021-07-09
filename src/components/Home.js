@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 import Navbar from "./Navbar"
 import ForumList from "./forum/ForumList"
@@ -34,4 +34,4 @@ render(){
 }   
 }
 
-export default Home
+export default Home;

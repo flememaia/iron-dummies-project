@@ -2,40 +2,41 @@ import React from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
 
-import InputForm from '../InputForm';
+import InputForm from "../InputForm";
 
 class LogIn extends React.Component {
-    state = {
-        username:"",
-        // email: "",
-        password: "",
-        pontuaction: "",
-        id: "",
-    }
+  state = {
+    username: "",
+    // email: "",
+    password: "",
+    pontuaction: "",
+    id: "",
+  };
 
-    // Atualizar o state com o valor interno do input quando o usuário dispara o evento 'change'
-    handleChange = (event) =>{
-        this.setState({ [event.target.name]: event.target.value })
-    }
+  // Atualizar o state com o valor interno do input quando o usuário dispara o evento 'change'
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-    // Envia os dados para a API quando acontece o evento 'submit', que é disparado quando o usuário aciona um botão com 'type' submit dentro de um formulário
-    handleSubmit = (event) => {
-        event.preventDefault(); // Previne o comportamento padrão dos formulários, que é recarregar a página e enviar os dados através da URL
+  // Envia os dados para a API quando acontece o evento 'submit', que é disparado quando o usuário aciona um botão com 'type' submit dentro de um formulário
+  handleSubmit = (event) => {
+    event.preventDefault(); // Previne o comportamento padrão dos formulários, que é recarregar a página e enviar os dados através da URL
 
-        axios
-        .get(`https://sao-ironrest.herokuapp.com/findOne/grupo7_irondummies?username=${this.state.username}`)
-        .then((response) => {
-            console.log(response.data);
+    axios
+      .get(
+        `https://sao-ironrest.herokuapp.com/findOne/grupo7_irondummies?username=${this.state.username}`
+      )
+      .then((response) => {
+        console.log(response.data);
 
-        if (response.data.password === this.state.password){
-                this.props.history.push(`/home/${response.data._id}`); // DIRECIONA PARA HOME COM O id do usuário + PONTUATION + RANKING
-                } 
-
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    };
+        if (response.data.password === this.state.password) {
+          this.props.history.push(`/home/${response.data._id}`); // DIRECIONA PARA HOME COM O id do usuário + PONTUATION + RANKING
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
     render(){
         return(
@@ -72,4 +73,4 @@ class LogIn extends React.Component {
     }
 }
 
-export default LogIn
+export default LogIn;
