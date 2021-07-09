@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
 
 import InputForm from '../InputForm';
 
@@ -39,9 +40,12 @@ class LogIn extends React.Component {
     render(){
         return(
             <div>
-                <h1>Componente login</h1>
-                <h1 className="my-5">Log In</h1>
-                <p>ARRUMR O TEXTO</p>
+                <Navbar />
+                <div className="my-3">
+                    <h1>Register</h1>
+                    <h2>It's quick and easy.</h2>
+                </div> 
+                
                 <form onSubmit={this.handleSubmit}>
                     <InputForm 
                         label="Your UserName"

@@ -56,7 +56,7 @@ class ContributionDetails extends Component {
         </div>
 
         <button className="btn btn-danger" onClick={this.changeIdea}>
-          VOLTAR
+          RETURN TO HOME
         </button>
       </div>
     );

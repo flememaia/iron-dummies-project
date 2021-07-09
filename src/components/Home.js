@@ -1,23 +1,16 @@
 import React from "react"
 import { Link } from 'react-router-dom'
 
+import Navbar from "./Navbar"
 import ForumList from "./forum/ForumList"
 
 class Home extends React.Component{
 
-    // state = {
-    //     id: ""
-    // }
-
-    // handleSubmit = (event) =>{
-    //     event.preventDefault();
-    // }
-
 render(){
     return (
         <div>
-            <h1>Componente Home</h1>
-            <h1 className="my-5">TEXTO INICIAL ARRUMAR</h1>
+            <Navbar />
+            <h1 className="my-5"> Feel free to browse the community forum, your dumb question might be the same as mine!</h1>
             <div className="container container-md">
                 <div className="d-flex justify-content-between justify-content-md-around">
                 <Link 
@@ -36,13 +29,9 @@ render(){
                 </div>
             </div>
             < ForumList/>
-            {/* <form onSubmit={this.handleSubmit}> */}
-                
-            {/* </form> */}
         </div>
     )
-}
-   
+}   
 }
 
 export default Home
