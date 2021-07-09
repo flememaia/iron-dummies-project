@@ -32,6 +32,10 @@ class LogIn extends React.Component {
         if (response.data.password === this.state.password) {
           this.props.history.push(`/home/${response.data._id}`); // DIRECIONA PARA HOME COM O id do usuário + PONTUATION + RANKING
         }
+        else {
+          alert("username and/or password incorrect, please try again!")
+          this.props.history.push(`/login`)
+        }
       })
       .catch((err) => {
         console.log(err);

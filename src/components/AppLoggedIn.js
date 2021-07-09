@@ -48,65 +48,70 @@ class AppLogedIn extends React.Component{
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/forumbasics">
-                            Basics
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/forumfrontend">
-                            WebDev Front
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/forumbackend">
-                            WebDev Back
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/forumhavenoidea">
-                            Have no idea
-                            </Link>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <Link
-                            className="nav-link dropdown-toggle"
-                            to="#"
-                            id="navbarDropdownMenuLink"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            >
-                            Track Your Progress
-                            </Link>
-                            <div
-                            className="dropdown-menu"
-                            aria-labelledby="navbarDropdownMenuLink"
-                            >
-                            <Link className="dropdown-item" to={`/updateskills/${this.state._id}`}>
-                                Update Your Skills M1!
-                            </Link>
-                            <Link
-                                className="dropdown-item"
-                                to={`/updateskills_m2/${this.state._id}`}
-                            >
-                                Update Your Skills M2!
-                            </Link>
-                            <Link
-                                className="dropdown-item"
-                                to={`/updateskills_m3/${this.state._id}`}
-                            >
-                                Update Your Skills M3!
-                            </Link>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/forumbasics">
+                                Basics
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/forumfrontend">
+                                WebDev Front
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/forumbackend">
+                                WebDev Back
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/forumhavenoidea">
+                                Have no idea
+                                </Link>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <Link
+                                className="nav-link dropdown-toggle"
+                                to="#"
+                                id="navbarDropdownMenuLink"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >
+                                Track Your Progress
+                                </Link>
+                                <div
+                                className="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink"
+                                >
+                                <Link className="dropdown-item" to={`/updateskills/${this.state._id}`}>
+                                    Update Your Skills M1!
+                                </Link>
+                                <Link
+                                    className="dropdown-item"
+                                    to={`/updateskills_m2/${this.state._id}`}
+                                >
+                                    Update Your Skills M2!
+                                </Link>
+                                <Link
+                                    className="dropdown-item"
+                                    to={`/updateskills_m3/${this.state._id}`}
+                                >
+                                    Update Your Skills M3!
+                                </Link>
 
-                            <Link 
-                                className="dropdown-item"
-                                to={`/chart/${this.state._id}`}
-                            >
-                                Generate Your Report
-                            </Link>
-                            </div>
-                        </li>
+                                <Link 
+                                    className="dropdown-item"
+                                    to={`/chart/${this.state._id}`}
+                                >
+                                    Generate Your Report
+                                </Link>
+                                </div>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/h">
+                                Logout 
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     </nav>
