@@ -41,7 +41,7 @@ function App() {
               <Route path="/deletecontribution/:id" component={DeleteContribution}
               />
               {/* :id => _id */}
-              <Route path="/h" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route path="/login" component={LogIn} />
               <Route path="/newdummy" component={NewUser} />
               <Route exact path="/home/:id" component={AppLogedIn} />
