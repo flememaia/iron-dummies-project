@@ -1,5 +1,6 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
+import Navbar from './Navbar';
 
 import InputForm from "../InputForm";
 
@@ -37,37 +38,39 @@ class LogIn extends React.Component {
       });
   };
 
-  render() {
-    return (
-      <div>
-        <h1>Componente login</h1>
-        <h1 className="my-5">Log In</h1>
-        <h2 className="my-5">Let's do this!</h2>
-
-        <form onSubmit={this.handleSubmit}>
-          <InputForm
-            label="Your UserName"
-            type="text"
-            onChange={this.handleChange}
-            value={this.state.username}
-            name="username"
-            required
-          />
-          <InputForm
-            label="Enter a strong password"
-            type="password"
-            onChange={this.handleChange}
-            value={this.state.password}
-            name="password"
-            required
-          />
-          <button type="submit" className="btn btn-primary">
-            Log In
-          </button>
-        </form>
-      </div>
-    );
-  }
+    render(){
+        return(
+            <div>
+                <Navbar />
+                <div className="my-3">
+                    <h1>Register</h1>
+                    <h2>It's quick and easy.</h2>
+                </div> 
+                
+                <form onSubmit={this.handleSubmit}>
+                    <InputForm 
+                        label="Your UserName"
+                        type="text"
+                        onChange={this.handleChange}
+                        value={this.state.username}
+                        name="username"
+                        required
+                    />
+                    <InputForm 
+                        label="Enter a strong password"
+                        type="password"
+                        onChange={this.handleChange}
+                        value={this.state.password}
+                        name="password"
+                        required
+                    />
+                    <button type="submit" className="btn btn-primary">
+                        Log In
+                    </button>
+                </form>
+            </div>
+        )
+    }
 }
 
 export default LogIn;

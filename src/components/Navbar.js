@@ -1,9 +1,10 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link} from "react-router-dom";
+
 function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <Link className="navbar-brand" to="/h">
+      <Link className="navbar-brand" to={`/home/${props.id}`}>
         IronDummies
       </Link>
       <button
@@ -68,6 +69,13 @@ function Navbar(props) {
                 to={`/updateskills_m3/${props.id}`}
               >
                 Update Your Skills M3!
+              </Link>
+
+              <Link 
+                className="dropdown-item"
+                to={`/chart/${props.id}`}
+              >
+                Generate Your Report
               </Link>
             </div>
           </li>

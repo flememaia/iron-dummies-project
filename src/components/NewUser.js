@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+import Navbar from './Navbar';
 import InputForm from '../InputForm';
 
 class NewUser extends React.Component {
@@ -56,9 +57,11 @@ class NewUser extends React.Component {
     render(){
         return(
             <div>
-                <h1>Componente NewUser</h1>
-                <h1>New Dummy</h1>
-                <p>ARRUMR O TEXTO Welcome! xxxxx. First of all, let´s create your account!</p>
+                <Navbar />
+                <div className="my-3">
+                    <h1>Welcome!</h1>
+                    <h2>First of all, let´s create your account!</h2>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     <InputForm 
                         label="Your UserName"

@@ -1,6 +1,7 @@
 import React from 'react';
 import Chart from "chart.js/auto";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class ChartBox extends React.Component {
     state = { //SUGESTÃO PEDRO PUXAR OBJETO SKILL INTEIRO
@@ -170,6 +171,85 @@ class ChartBox extends React.Component {
     render(){
         return(
             <div>
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <Link className="navbar-brand" to="/h">
+                        IronDummies
+                    </Link>
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/forumbasics">
+                            Basics
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/forumfrontend">
+                            WebDev Front
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/forumbackend">
+                            WebDev Back
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/forumhavenoidea">
+                            Have no idea
+                            </Link>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <Link
+                            className="nav-link dropdown-toggle"
+                            to="#"
+                            id="navbarDropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            >
+                            Track Your Progress
+                            </Link>
+                            <div
+                            className="dropdown-menu"
+                            aria-labelledby="navbarDropdownMenuLink"
+                            >
+                            <Link className="dropdown-item" to={`/updateskills/${this.state._id}`}>
+                                Update Your Skills M1!
+                            </Link>
+                            <Link
+                                className="dropdown-item"
+                                to={`/updateskills_m2/${this.state._id}`}
+                            >
+                                Update Your Skills M2!
+                            </Link>
+                            <Link
+                                className="dropdown-item"
+                                to={`/updateskills_m3/${this.state._id}`}
+                            >
+                                Update Your Skills M3!
+                            </Link>
+
+                            <Link 
+                                className="dropdown-item"
+                                to={`/chart/${this.state._id}`}
+                            >
+                                Generate Your Report
+                            </Link>
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+                    </nav>
                 <h1>Componente ChartBox</h1>
                 <canvas id="chart" width="200"></canvas>
             </div>

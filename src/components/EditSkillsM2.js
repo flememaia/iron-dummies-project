@@ -1,5 +1,6 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import SelectFormTest from "../SelectFormTest";
 
@@ -376,39 +377,119 @@ class EditSkillsM2 extends React.Component {
     }
   };
 
-  render() {
-    return (
-      <div>
-        <h1>Componente EditSkills_select_test = atualiza M2</h1>
-        <h1 className="my-5">Web Dev Skills Levels</h1>
-        <h2 className="my-5">
-          Update your skills according to module. Take your time and don't lie!
-        </h2>
+    render(){
+        return(
+            <div>
+                {/* <Navbar id={this.state_id}/> */}
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <Link className="navbar-brand" to={`/home/${this.state._id}`}>
+                        IronDummies
+                    </Link>
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/forumbasics">
+                            Basics
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/forumfrontend">
+                            WebDev Front
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/forumbackend">
+                            WebDev Back
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/forumhavenoidea">
+                            Have no idea
+                            </Link>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <Link
+                            className="nav-link dropdown-toggle"
+                            to="#"
+                            id="navbarDropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            >
+                            Track Your Progress
+                            </Link>
+                            <div
+                            className="dropdown-menu"
+                            aria-labelledby="navbarDropdownMenuLink"
+                            >
+                            <Link className="dropdown-item" to={`/updateskills/${this.state._id}`}>
+                                Update Your Skills M1!
+                            </Link>
+                            <Link
+                                className="dropdown-item"
+                                to={`/updateskills_m2/${this.state._id}`}
+                            >
+                                Update Your Skills M2!
+                            </Link>
+                            <Link
+                                className="dropdown-item"
+                                to={`/updateskills_m3/${this.state._id}`}
+                            >
+                                Update Your Skills M3!
+                            </Link>
 
-        <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label>Web Dev Skills</label>
-            <select
-              className="form-control"
-              name="web_skills"
-              onChange={this.handleChange}
-              value={this.state.web_skills}
-            >
-              <option value="">Please choose an option</option>
-              <option value="basic">Basic</option>
-              <option value="front_end">Front-End</option>
-              <option value="back_end">Back-End</option>
-            </select>
-          </div>
-          {this.renderSkills()}
-
-          <button type="submit" className="btn btn-primary">
-            Update my skills M2
-          </button>
-        </form>
-      </div>
-    );
-  }
+                            <Link 
+                                className="dropdown-item"
+                                to={`/chart/${this.state._id}`}
+                            >
+                                Generate Your Report
+                            </Link>
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div className="my-5">
+                    <h1>Web Dev Skills Levels - Module 2</h1>
+                    <h2>Update your skills according to module.</h2>
+                    <h2>Take your time and don't lie!</h2>
+                </div>
+                
+                <form onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                        <label>Web Dev Skills</label>
+                            <select
+                                className="form-control"
+                                name="web_skills"
+                                onChange={this.handleChange}
+                                value={this.state.web_skills}
+                                >
+                                <option value="">Please choose an option</option>
+                                <option value="basic">Basic</option>
+                                <option value="front_end">Front-End</option>
+                                <option value="back_end">Back-End</option>
+                            </select>
+                    </div>
+                        {this.renderSkills()}
+                    
+                    <button type="submit" className="btn btn-primary">
+                        Update my skills M2
+                    </button>
+                </form>
+            </div>
+        )
+    }
 }
 
 export default EditSkillsM2;

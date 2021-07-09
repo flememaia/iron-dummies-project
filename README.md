@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is Speed 2.0?
 
-## Available Scripts
+Speed 2.0 is a race "car" game for computers only.
 
-In the project directory, you can run:
+🚧 Mobile Version: pending 🚧
 
-### `npm start`
+🎯 Your should deviate from the obstacles to continue increasing your score and playing. When you are hit by a obstacle, *"your life score"* decrease. The game ends when *"your life score"* is finished.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How does it work?
 
-### `npm test`
+1. Open the game;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. 🔉 Keep your audion on for a full experience!
 
-### `npm run build`
+3. 🎮 Pick an option from the 3 buttons on your left (click the button with the option chosen);
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. The game will automatically start;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Use the ⬅️ and ➡️ from your keyboard to move your player and avoide the obstacles;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. 🚧 If an obstacle hits you, your life score decreases;
 
-### `npm run eject`
+7. 🏁 As far as you can go, higher is gonna be your score;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+8. 👾 The game ends when your life score is finished.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+9. It´s time to play again!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## About the creator
 
-## Learn More
+I'm a curious and creativy person, passionate for innovation, math and people!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I'm moved by challenges and a bit of stubbornness 😬
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I'm a bachelor in Pharmacy-Biochemistry, with MBA in Project Management and current, a very happy Ironhack Web Development Student!
 
-### Code Splitting
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Play Now!
 
-### Analyzing the Bundle Size
+Click [HERE](https://flememaia.github.io/speed-2.0-the-game/) to play! //*****DEPLOY
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Game on!](https://media.giphy.com/media/WwYVr6xxZiX5jAKk5V/giphy.gif)
 
-### Making a Progressive Web App
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🛠 Tech used
 
-### Advanced Configuration
+ - JavaScript
+ - HTML
+ - CSS - Yes, I know it need some (or a lot of) improvement...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![CSS feelings](https://media.giphy.com/media/YFkpsHWCsNUUo/giphy.gif)
 
-### Deployment
+But, wait for the next version!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![It´s gonna be legendary!](https://media.giphy.com/media/4jzV9HSPBBiko/giphy.gif)
 
-### `npm run build` fails to minify
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Find out more about this project
+
+You can find more [here!](https://docs.google.com/presentation/d/1LBvBK6YFft0p050p1M8BiEgSK4whJES0CEKOshCS2Rs/edit?usp=sharing) //****APRESENTAÇÃO
+
+![Thank you!](https://media.giphy.com/media/M9NbzZjAcxq9jS9LZJ/giphy.gif)

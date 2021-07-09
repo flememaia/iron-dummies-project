@@ -4,7 +4,7 @@ import axios from "axios";
 
 // Forum com as colunas preenchidas pelos usuários
 
-class ForumList extends Component {
+class ForumListWebDevFront extends Component {
   state = {
     _id: "",
     username: "",
@@ -32,15 +32,32 @@ class ForumList extends Component {
          return newResponse
       })
       console.log(newResponse)
-      this.setState({ allUsers: [...newResponse] });
+
+      const newResponseWebDevFront = []
+      newResponse.map(object => {
+        if(object.skilltype === "WebDev Front"){
+          newResponseWebDevFront.push(object)
+        }
+        return newResponseWebDevFront   
+      })
+      console.log(newResponseWebDevFront)
+      this.setState({ allUsers: [...newResponseWebDevFront] });
     } catch (err) {
       console.error(err);
     }
   };
 
-  handleLikes = () => {
-    this.setState({ counter: this.state.counter + 1})
-  }
+  // handleLikes = () => {
+  //   this.setState({ counter: this.state.counter + 1})
+  // }
+
+  // renderPages = () => {
+  //   if(this.allUsers.skilltype === "Basics"){
+
+  //   }
+  //       "WebDev Back"
+  //       "Have no idea"
+  // }
 
   render() {
     return (
@@ -96,13 +113,13 @@ class ForumList extends Component {
                           className="fas fa-trash-alt m-2"
                         ></i>
                       </Link>
-                      <button onClick={this.handleLikes}>
+                      {/* <button onClick={this.handleLikes}>
                         {this.state.counter}
                         <i
                           style={{ color: "#F9A602" }}
                           className="fas fa-star"
                         ></i>
-                      </button>
+                      </button> */}
                     </td>
                   </tr>
                 );
@@ -115,4 +132,4 @@ class ForumList extends Component {
   }
 }
 
-export default ForumList;
+export default ForumListWebDevFront;

@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom";
-import ForumList from "./forum/ForumList";
+import ForumListBasics from "./ForumListBasics";
 // import Navbar from "./Navbar";
 
 import axios from "axios"
 
-class AppLogedIn extends React.Component{
+class AppLoggedInForumBasics extends React.Component{
     state = {
         _id: "",
         username: "",
@@ -120,10 +120,10 @@ class AppLogedIn extends React.Component{
                     </buton>
                 </Link>
                 
-                < ForumList/>
+                < ForumListBasics/>
             </div>
         )
     }
 }
 
-export default AppLogedIn
+export default AppLoggedInForumBasics

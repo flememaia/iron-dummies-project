@@ -69,7 +69,7 @@ class DeleteContribution extends React.Component {
             <i class="fas fa-trash-alt m-2"></i>
             </button>
             <button className="btn btn-primary" onClick={this.changeIdea}>
-              RETURN
+              RETURN TO HOME
             </button>
           </div>
         </form>
